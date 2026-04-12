@@ -44,15 +44,15 @@ export const postBlog = async (req, res) => {
 
 export const updateBlog = async (req, res) => {
   const id = parseInt(req.params.id);
-  const { title, content, category, tags } = req.body;
-  if (!title || !content || !category || !tags) {
-    return res.status(400).json({
-      error:
-        "please provide valid request data (title, content, category, tags)",
-    });
-  }
 
   try {
+    const { title, content, category, tags } = req.body;
+    if (!title || !content || !category || !tags) {
+      return res.status(400).json({
+        error:
+          "please provide valid request data (title, content, category, tags)",
+      });
+    }
     const post = await prisma.blog.update({
       where: { id: id },
       data: { title, content, category, tags },
