@@ -46,6 +46,14 @@ npm run dev
 
 The server runs on `http://localhost:3000`.
 
+## API Documentation
+
+Interactive API documentation is available via Swagger UI at:
+
+```
+http://localhost:3000/api-docs
+```
+
 ## API Endpoints
 
 ### Get all posts
